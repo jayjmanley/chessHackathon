@@ -1,0 +1,13 @@
+isc_project_id = "fecfe6d5-5896-4cbd-90e4-3a0ea2a2f7f2"
+experiment_name = "hackathon3winner_w_ee453536e9d8"
+gpu_type = "24GB VRAM GPU"
+gpus = 48
+output_path = "/root/outputs/chessVision"
+dataset_id = "96f6d30d-3dec-474b-880e-d2fa3ba3756e"
+compute_mode = "burst"
+burst_shape_priority_list = ["gcp-asia-southeast1-h100-spot","gcp-us-central-h100-spot"]
+command = '''
+source /root/chess/bin/activate && 
+cd /root/chess-hackathon/ && 
+torchrun --nnodes=$NNODES --nproc-per-node=$N_PROC --master_addr=$MASTER_ADDR --master_port=$MASTER_PORT --node_rank=$RANK 
+train_chessVision.py'''
