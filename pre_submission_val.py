@@ -3,7 +3,8 @@ import torch
 import yaml
 import signal
 from contextlib import contextmanager
-from model import Model
+# from model import Model
+from burst_model1 import Model
 from chess_gameplay import Agent, play_game
 
 TIME_LIMIT_SECONDS = 120
@@ -24,7 +25,7 @@ model_config = yaml.safe_load(open("model_config.yaml"))
 model0 = Model(**model_config)
 
 # checkpoint loading
-checkpoint = torch.load("checkpoint.pt", map_location=torch.device('cpu'))
+checkpoint = torch.load("newest_ckpt.pt", map_location=torch.device('cpu'))
 model0.load_state_dict(checkpoint["model"])
 
 # model inference

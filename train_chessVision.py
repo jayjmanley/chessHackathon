@@ -79,8 +79,8 @@ def main(args, timer):
 
     dataset_gm = EVAL_HDF_Dataset("/data/gm")  # Reads inventory.txt and .h5 files in /data/gm
     dataset_lc0 = EVAL_HDF_Dataset("/data/lc0")  # Reads inventory.txt and .h5 files in /data/lc0
-    timer.report(f"Intitialized dataset with {len(dataset):,} Board Evaluations.")
     dataset = ConcatDataset([dataset_gm, dataset_lc0])
+    timer.report(f"Intitialized dataset with {len(dataset):,} Board Evaluations.")
 
     random_generator = torch.Generator().manual_seed(42)
     train_dataset, test_dataset = random_split(dataset, [0.8, 0.2], generator=random_generator)

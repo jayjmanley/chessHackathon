@@ -3,9 +3,9 @@ experiment_name = "hackathon3winner_w_ee453536e9d8"
 gpu_type = "24GB VRAM GPU"
 gpus = 48
 output_path = "/root/outputs/chessVision"
-dataset_id = "96f6d30d-3dec-474b-880e-d2fa3ba3756e"
+dataset_id = "1e404a5c-140b-4e30-af3a-ee453536e9d8"
 compute_mode = "burst"
-burst_shape_priority_list = ["gcp-asia-southeast1-h100-spot","gcp-us-central-h100-spot"]
+burst_shape_priority_list = ["gcp-us-central-h100-spot"]
 command = '''
 source /root/chess/bin/activate && 
 cd /root/chess-hackathon/ && 
